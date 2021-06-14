@@ -1,10 +1,84 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+:focus,
+:active {
+	outline: none;
+}
+a:focus,
+a:active {
+	outline: none;
+}
+aside,
+nav,
+footer,
+header,
+section {
+	display: block;
+}
+html,
+body {
+	height: 100%;
+}
+body {
+	line-height: 1;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input::-ms-clear {
+	display: none;
+}
+button {
+	cursor: pointer;
+}
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+a,
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+ul li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+
+body{
+    background: #F5F5F5;
+}
 .app-wrapper {
-  margin: 0 auto;
+  /*margin: 0 auto;*/
   display: grid;
-  width: 1200px;
+  /*width: 1200px;*/
   grid-template-areas:
   "h h"
   "n c";
+  gap: 30px;
+  padding: 30px;
 
    grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
@@ -12,5 +86,6 @@
 }
 .app-wrapper-content{
         grid-area: c;
-        background-color: cornflowerblue;
+        background-color: #FFFFFF;
+        border-radius: 20px;
 }
