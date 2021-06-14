@@ -15,11 +15,11 @@ const App = (props) => {
                 <div className='app-wrapper-content'>
                     <Route path='/profile' component={Profile} />
                     <Route path='/dialogs' component={Dialogs} />
-                    <Route path='/news' component={News} />
+                    {/*<Route path='/news' component={News} />
                     <Route path='/music' component={Music} />
-                    <Route path='/settings' component={Settings} />
+                    <Route path='/settings' component={Settings} />*/}
                 </div>
-            </div>);
+            </div>
         </BrowserRouter>
     )
 }
