@@ -65,8 +65,7 @@ h6 {
 	font-weight: inherit;
 	font-size: inherit;
 }
-
-
+/*===============================================================================================================================================*/
 body{
     background: #F5F5F5;
 }
@@ -88,4 +87,8 @@ body{
         grid-area: c;
         background-color: #FFFFFF;
         border-radius: 20px;
+        padding: 30px;
+}
+.app-wrapper-content img{
+    border-radius: 20px;
 }
