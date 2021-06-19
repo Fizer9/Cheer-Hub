@@ -2,13 +2,14 @@ import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post'
 
-const MyPosts = () => {
+const posts = () => {
 
     let postData = [
-        { id: 1, messages: 'Hi, how are you?', likesCount: 12},
-        { id: 2, messages: "It's my first post", likesCount: 11},
-
+        { id: 1, messages: 'Hi, how are you?', likesCount: 12 },
+        { id: 2, messages: "It's my first post", likesCount: 11 },
     ]
+
+    let postsElements = postData.map(p => <Post message={p.messages} likesCount={p.likesCount} />)
     return (
         <div>
             My posts
@@ -17,11 +18,10 @@ const MyPosts = () => {
                 <button>Add post</button>
             </div>
             <div className={s.posts}>
-                <Post message={postData[0].messages} likesCount={postData[0].likesCount} />
-                <Post message={postData[1].messages} likesCount={postData[1].likesCount} />
+                {postsElements}
             </div>
         </div>
     )
 }
 
-export default MyPosts;
+export default posts;

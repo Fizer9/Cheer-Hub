@@ -9,6 +9,10 @@
     padding: 10px;
 }
 
-.dialogsItems .active {
-    color: #0A66C2;
+
+a{
+    color: #000;
+}
+a.active{
+    background-color: rgba(10, 102, 194, 0.1);
 }
