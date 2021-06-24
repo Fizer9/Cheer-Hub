@@ -5,14 +5,18 @@
 .dialogsItems {
     padding: 10px;
 }
+.dialogsItems div,h2 {
+    margin-bottom: 30px;
+}
+.dialogsItems div:nth-last-child(1) {
+    margin-bottom: 0;
+}
 .messages {
     padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
-
-a{
+a {
     color: #000;
-}
-a.active{
-    background-color: rgba(10, 102, 194, 0.1);
 }
