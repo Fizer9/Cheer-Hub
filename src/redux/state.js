@@ -15,14 +15,22 @@ let state = {
             { id: 6, messages: 'Yo, nice work' },
         ],
         dialogs: [
-            { id: 1, name: 'Igor', img: './Igor.jpg'},
-            { id: 2, name: 'Dasha', img: './Dasha.jpg'},
-            { id: 3, name: 'Konstantin', img: './Konstantin.jpg'},
-            { id: 4, name: 'Alexander', img: './Alexander.jpg'},
-            { id: 5, name: 'Anastasia', img: './Anastasia.jpg'},
-            { id: 6, name: 'Veronika', img: './Veronika.jpg'},
+            { id: 1, name: 'Igor', img: './Igor.jpg' },
+            { id: 2, name: 'Dasha', img: './Dasha.jpg' },
+            { id: 3, name: 'Konstantin', img: './Konstantin.jpg' },
+            { id: 4, name: 'Alexander', img: './Alexander.jpg' },
+            { id: 5, name: 'Anastasia', img: './Anastasia.jpg' },
+            { id: 6, name: 'Veronika', img: './Veronika.jpg' },
         ],
     },
 }
 
+export let addPost = (postMessage) => {
+    let newPost = {
+        id: 7,
+        message: postMessage,
+        likesCount: 0
+    };
+    state.profilePage.postData.push(newPost);
+}
 export default state;
