@@ -1,12 +1,12 @@
-.dialog:nth-last-child(even) {
-    align-self: flex-end;
-    background-color: rgba(10, 102, 194, 0.1);
-    border-radius: 20px 20px 0px 20px;
-}
-.dialog:nth-last-child(odd) {
+.dialog:nth-child(even) {
     align-self: flex-start;
     background-color: rgba(160, 160, 160, 0.2);
     border-radius: 20px 20px 20px 0px;
+}
+.dialog:nth-child(odd) {
+    align-self: flex-end;
+    background-color: rgba(10, 102, 194, 0.1);
+    border-radius: 20px 20px 0px 20px;
 }
 .dialog{
     padding: 20px 30px;
