@@ -28,7 +28,7 @@ let store = {
                 { id: 5, name: 'Anastasia', img: './Anastasia.jpg' },
                 { id: 6, name: 'Veronika', img: './Veronika.jpg' },
             ],
-            newMessageText: '',
+            newMessageBody: '',
         },
         sidebar: {}
     },
