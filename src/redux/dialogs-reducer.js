@@ -12,10 +12,11 @@ let initialState = {
     ],
     dialogs: [
         { id: 1, name: 'Igor', img: './Igor.jpg' },
-        { id: 2, name: 'Konstantin', img: './Konstantin.jpg' },
-        { id: 3, name: 'Alexander', img: './Alexander.jpg' },
-        { id: 4, name: 'Anastasia', img: './Anastasia.jpg' },
-        { id: 5, name: 'Veronika', img: './Veronika.jpg' },
+        { id: 2, name: 'Dariya', img: './Dariya.jpg' },
+        { id: 3, name: 'Konstantin', img: './Konstantin.jpg' },
+        { id: 4, name: 'Alexander', img: './Alexander.jpg' },
+        { id: 5, name: 'Anastasia', img: './Anastasia.jpg' },
+        { id: 6, name: 'Veronika', img: './Veronika.jpg' },
     ],
     newMessageBody: '',
 };
@@ -28,7 +29,7 @@ const dialogsReducer = (state = initialState, action) => {
         case SEND_MESSAGE:
             let body = state.newMessageBody;
             state.newMessageBody = '';
-            state.messages.push({ id: 6, message: body });
+            state.messages.push({ id: 7, message: body });
             return state;
         default:
             return state;
