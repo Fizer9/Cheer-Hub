@@ -2,15 +2,10 @@
     grid-area: h;
     background-color: #FFFFFF;
     border-radius: 20px;
-    /*display: flex;*/
 }
 
 .header img {
     display: block;
-    /*width: 117px;*/
-    /*align-items: center;
-    justify-content: center;*/
-    /*flex: 0 1 117px;*/
     margin: 15px auto;
 }
 
