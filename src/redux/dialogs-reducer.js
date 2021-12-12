@@ -6,9 +6,9 @@ let initialState = {
     messages: [
         { id: 1, message: 'Hi' },
         { id: 2, message: 'Hello' },
-        { id: 3, message: 'How is your day?' },
-        { id: 4, message: 'Greate, how are you going' },
-        { id: 5, message: 'Perfect, I just ended this Page' },
+        { id: 3, message: 'How was your day?' },
+        { id: 4, message: `It's great. How are you doing?` },
+        { id: 5, message: 'Perfect, I just ended this page' },
         { id: 6, message: 'Nice work!' },
     ],
     dialogs: [

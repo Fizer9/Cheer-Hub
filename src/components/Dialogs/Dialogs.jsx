@@ -27,9 +27,8 @@ const Dialogs = (props) => {
             <div className={s.dialogsItems}>
                 {dialogsElements}
             </div>
-            <div className={s.messages}>
-                <div>{messagesElements}</div>
-                <div></div>
+            <div>
+                <div className={s.flex}>{messagesElements}</div>
                 <div><textarea onChange={onMessageChange} value={newMessageBody} rows="4" cols="110" placeholder='Write a message...' /><button className={s.send} onClick={onSendMessageClick}>Send</button></div>
             </div>
         </div>

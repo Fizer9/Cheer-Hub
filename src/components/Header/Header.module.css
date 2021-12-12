@@ -2,10 +2,17 @@
     grid-area: h;
     background-color: #FFFFFF;
     border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    align-items: center;
 }
 
 .header img {
-    display: block;
-    margin: 15px auto;
+    /* display: block;
+    margin: 15px auto; */
 }
 
+.loginBlock {
+
+}
