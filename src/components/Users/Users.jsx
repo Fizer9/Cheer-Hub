@@ -5,6 +5,11 @@ import { NavLink } from "react-router-dom";
 import axios from "axios";
 
 let Users = (props) => {
+    //Fake user data
+    let cities = ['Moscow', 'Saint Petersburg', 'Novosibirsk', 'Yekaterinburg', 'Kazan', 'Nizhny Novgorod', 'Chelyabinsk', 'Samara',
+    'Omsk', 'Rostov-on-Don', 'Ufa', 'Krasnoyarsk', 'Voronezh', 'Perm', 'Volgograd', 'Krasnodar', 'Saratov', 'Tyumen', 'Tolyatti',
+    'Izhevsk', 'Barnaul', 'Ulyanovsk', 'Irkutsk', 'Khabarovsk', 'Makhachkala', 'Yaroslavl', 'Vladivostok', 'Orenburg', 'Tomsk',
+    'Kemerovo']
 
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
 
@@ -28,8 +33,9 @@ let Users = (props) => {
                 </div>
                 <div>
                     {u.followed
-                        ? <button onClick={() => {
+                        ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
 
+                            props.toggleFollowingProgress(true, u.id)
                             axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
                                 withCredentials: true,
                                 headers: {
@@ -39,11 +45,13 @@ let Users = (props) => {
                                 if (response.data.resultCode == 0) {
                                     props.unfollow(u.id)
                                 }
+                                props.toggleFollowingProgress(false, u.id)
                             })
 
                         }}>Unfollow</button>
-                        : <button onClick={() => {
+                        : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
 
+                            props.toggleFollowingProgress(true, u.id)
                             axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
                                 withCredentials: true,
                                 headers: {
@@ -53,13 +61,14 @@ let Users = (props) => {
                                 if (response.data.resultCode == 0) {
                                     props.follow(u.id)
                                 }
+                                props.toggleFollowingProgress(false, u.id)
                             })
                         }}>Follow</button>}
                 </div>
                 <div>{u.name}</div>
                 <div>{u.status}</div>
-                <div>{"u.location.country"}</div>
-                <div>{"u.location.city"}</div>
+                <div>Russia</div>
+                <div>{cities[Math.floor(Math.random() * cities.length)]}</div>
             </div>)
         }
     </div>
