@@ -21,6 +21,9 @@ const App = (props) => {
 
                 <Route path='/users'
                     render={() => <UsersContainer />} />
+
+                <Route path='/login'
+                    render={() => <UsersContainer />} />
             </div>
         </div>
     )

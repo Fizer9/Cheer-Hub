@@ -11,6 +11,7 @@ const Header = (props) => {
             </div>
 
             <img src='logo.svg' />
+            <input type="search" placeholder='Global search'/>
         </header>
 }
 export default Header;
