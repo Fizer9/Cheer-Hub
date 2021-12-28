@@ -18,7 +18,7 @@ const ProfileInfo = (props) => {
                 {props.profile.photos.large 
                 ? <img src={props.profile.photos.large} />
                 : <img src={userPhoto} />}
-                <ProfileStatus />
+                <ProfileStatus status={'Человек есть, чтобы иметь радость'}/>
             </div>
         </div>
     )
