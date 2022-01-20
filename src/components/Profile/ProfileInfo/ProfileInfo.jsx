@@ -11,14 +11,11 @@ const ProfileInfo = (props) => {
 
     return (
         <div>
-            {/* <div>
-                <img src="https://www.biletik.aero/upload/medialibrary/eb3/eb3395de4d9310e8b6a8e54c15eb3d7e.jpg" alt="#" />
-            </div> */}
             <div>
                 {props.profile.photos.large 
                 ? <img src={props.profile.photos.large} />
                 : <img src={userPhoto} />}
-                <ProfileStatus status={'Человек есть, чтобы иметь радость'}/>
+                <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
             </div>
         </div>
     )

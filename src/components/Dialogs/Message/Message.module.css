@@ -1,11 +1,11 @@
 .dialog:nth-child(even) {
     align-self: flex-start;
-    background-color: rgba(160, 160, 160, 0.2);
+    background-color: rgba(160, 160, 160, 0.25);
     border-radius: 20px 20px 20px 0px;
 }
 .dialog:nth-child(odd) {
     align-self: flex-end;
-    background-color: rgba(10, 102, 194, 0.1);
+    background: rgba(85, 157, 191, 0.6);
     border-radius: 20px 20px 0px 20px;
 }
 .dialog{

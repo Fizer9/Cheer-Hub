@@ -2,7 +2,6 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import Message from './Message/Message';
 import DialogItem from './Dialogitem/Dialogitem';
-import { Redirect } from 'react-router-dom';
 
 const Dialogs = (props) => {
     let state = props.dialogsPage;
@@ -29,7 +28,8 @@ const Dialogs = (props) => {
             </div>
             <div>
                 <div className={s.flex}>{messagesElements}</div>
-                <div><textarea onChange={onMessageChange} value={newMessageBody} rows="4" cols="110" placeholder='Write a message...' /><button className={s.send} onClick={onSendMessageClick}>Send</button></div>
+                <div><textarea onChange={onMessageChange} value={newMessageBody} rows="4" cols="110" placeholder='Write a message...' />
+                <button className={s.send} onClick={onSendMessageClick}>Send</button></div>
             </div>
         </div>
     )

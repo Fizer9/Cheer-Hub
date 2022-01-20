@@ -17,11 +17,8 @@
     display: flex;
     flex-direction: column;
 }
-a {
-    color: #000;
-}
 .send{
-    background-color: #0A66C2;
+    background-color: #3d9dd7;
     height: 44px;
     width: 101px;
     border-radius: 20px;

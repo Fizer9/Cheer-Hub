@@ -9,9 +9,6 @@ const Header = (props) => {
                 {props.isAuth ? props.login
                     : <NavLink to={'/login'}>Login</NavLink>}
             </div>
-
-            <img src='logo.svg' />
-            <input type="search" placeholder='Global search'/>
         </header>
 }
 export default Header;
