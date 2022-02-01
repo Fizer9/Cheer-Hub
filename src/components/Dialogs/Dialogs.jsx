@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import Message from './Message/Message';
 import DialogItem from './Dialogitem/Dialogitem';
+import { Field, reduxForm } from 'redux-form';
 
 const Dialogs = (props) => {
     let state = props.dialogsPage;
@@ -10,15 +11,8 @@ const Dialogs = (props) => {
 
     let messagesElements = state.messages.map(m => <Message message={m.message} key={m.id} />);
 
-    let newMessageBody = state.newMessageBody;
-
-    let onSendMessageClick = () => {
-        props.sendMessage();
-    }
-
-    let onMessageChange = (e) => {
-        let body = e.target.value;
-        props.updateNewMessageBody(body);
+    let onSendMessageClick = (values) => {
+        props.sendMessage(values.newMessageBody);
     }
 
     return (
@@ -28,11 +22,21 @@ const Dialogs = (props) => {
             </div>
             <div>
                 <div className={s.flex}>{messagesElements}</div>
-                <div><textarea onChange={onMessageChange} value={newMessageBody} rows="4" cols="110" placeholder='Write a message...' />
-                <button className={s.send} onClick={onSendMessageClick}>Send</button></div>
+                <SendMessageReduxForm onSubmit={onSendMessageClick}/>
             </div>
         </div>
     )
 }
+
+const SendMessageForm = (props) => {
+    return (
+    <form onSubmit={props.handleSubmit}>
+        <Field name='newMessageBody' component='textarea' rows="4" cols="110" placeholder='Write a message...' />
+        <button className={s.send}>Send</button>
+    </form>
+    )
+}
+
+const SendMessageReduxForm = reduxForm({form: 'dialogsSendMessageForm'}) (SendMessageForm)
 
 export default Dialogs;

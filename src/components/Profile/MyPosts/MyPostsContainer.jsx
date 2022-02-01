@@ -1,5 +1,4 @@
-import React from 'react';
-import { addPostActionCreater, updateNewPostTextActionCreater } from '../../../redux/profile-reducer';
+import { addPostActionCreater } from '../../../redux/profile-reducer';
 import Myposts from './MyPosts';
 import { connect } from 'react-redux';
 
@@ -11,12 +10,8 @@ let mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        updateNewPostText: (text) => {
-            let action = updateNewPostTextActionCreater(text);
-            dispatch(action);
-        },
-        addPost: () => {
-            dispatch(addPostActionCreater());
+        addPost: (newPostBody) => {
+            dispatch(addPostActionCreater(newPostBody));
         }
     }
 }
