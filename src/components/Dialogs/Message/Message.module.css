@@ -1,16 +1,21 @@
 .dialog:nth-child(even) {
     align-self: flex-start;
     background-color: rgba(160, 160, 160, 0.25);
-    border-radius: 20px 20px 20px 0px;
+    border-radius: 15px 15px 15px 0px;
 }
 .dialog:nth-child(odd) {
     align-self: flex-end;
     background: rgba(85, 157, 191, 0.6);
-    border-radius: 20px 20px 0px 20px;
+    border-radius: 15px 15px 0px 15px;
 }
 .dialog{
-    padding: 20px 30px;
+    padding: 1rem 15px;
+    max-width: 75%;
+    margin-bottom: 5px;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
 }
 .dialog:first-child{
-    margin-top: 50px;
+    margin-bottom: 0;
 }

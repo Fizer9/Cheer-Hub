@@ -1,0 +1,48 @@
+.sendIcon {
+    width: 24px;
+    height: 24px;
+}
+.sendButton{
+    width: 55px;
+    height: 55px;
+    padding: 1rem 0;
+    background-color: var(--color-grey-4);
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: var(--color-grey-2);
+}
+.sendButton:hover{
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    transition: all .3s ease-in-out;
+}
+.addmessageForm{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.textarea{
+    min-height: 3.5rem;
+    max-height: 26rem;
+    text-align: left;
+    border-radius: 15px;
+    font-weight: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    padding: .8rem 1.1rem;
+    outline: none;
+    border: none;
+    background-color: var(--color-grey-5);
+    width: calc(100% - 60px);
+    color: var(--color-white);
+    resize: none;
+}
+.textarea::-webkit-scrollbar{
+    width: 4px;
+}
+.textarea::-webkit-scrollbar-track{
+    display: none;
+}
+.textarea::-webkit-scrollbar-thumb{
+    background-color: var(--color-grey-5);
+}

@@ -1,6 +1,39 @@
-img {
+.dialog{
+    display: block;
+    border: 1px solid var(--color-grey-5);
+    border-radius: 15px;
+    box-shadow: 1px 2px 15px rgba(0,0,0,.1);
+    margin-bottom: 25px;
+}
+@media (max-width:600px){
+    .dialog{
+        border-radius: 0px;
+    }
+}
+.dialog:last-child{
+    margin-bottom: 0;
+}
+.dialog:not(.active):hover{
+    transform: translateY(-5px);
+    border: 1px solid var(--color-secondary);
+    box-shadow: 1px 4px 15px rgba(0,0,0,.32);
+}
+
+.dialog img{
     margin-right: 10px;
+    height: 100%;
+    border-radius: 50%;
 }
 .active{
     color: #9dddfe;
+    opacity: 1;
+    border: 1px solid var(--color-secondary);
+    box-shadow: 1px 4px 15px rgba(0,0,0,.32);
+}
+.dialogItem{
+    display: flex;
+    height: 75px;
+}
+.imgWrapper{
+    padding: 8px;
 }

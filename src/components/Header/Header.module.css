@@ -1,10 +1,8 @@
 .header {
     grid-area: h;
-    background-color: #21584b;
     display: flex;
     padding: 0 30px;
     align-items: center;
-    color: #fbefdf;
     border-bottom: 1px solid #000000;
     display: flex;
     justify-content: space-between;

@@ -10,12 +10,16 @@ const ProfileInfo = (props) => {
     }
 
     return (
-        <div>
+        <div className={s.flex}>
+            <div className={s.avatar}>
+                {props.profile.photos.large
+                    ? <img src={props.profile.photos.large} />
+                    : <img src={userPhoto} />}
+            </div>
             <div>
-                {props.profile.photos.large 
-                ? <img src={props.profile.photos.large} />
-                : <img src={userPhoto} />}
-                <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+                <div><span className={s.names}>Firstname Secondname</span></div>
+                <ProfileStatus className={s.status} 
+                status={props.status} updateStatus={props.updateStatus} />
             </div>
         </div>
     )

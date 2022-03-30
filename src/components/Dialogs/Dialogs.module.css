@@ -1,31 +1,42 @@
-.dialogs {
+:root{
+    --add-message-height: 110px;
+}
+.dialogs{
     display: grid;
-    grid-template-columns: 2fr 10fr;
-    grid-template-rows: auto 100px;
+    grid-template-columns: 2.5fr 9.5fr;
 }
-.dialogsItems {
-    padding: 10px;
+.dialogsItems{
+    overflow-y: auto;
+    padding: 10px 10px 0 0;
+    max-height: calc(100vh - var(--header-height) - 10px);
 }
-.dialogsItems div,h2 {
-    margin-bottom: 30px;
+.dialogsItems::-webkit-scrollbar, .messagesArea::-webkit-scrollbar {
+    width: 4px;
 }
-.dialogsItems div:nth-last-child(1) {
-    margin-bottom: 0;
+.dialogsItems::-webkit-scrollbar-track, .messagesArea::-webkit-scrollbar-track {
+    display: none;
 }
-.flex {
-    padding: 10px;
+.dialogsItems::-webkit-scrollbar-thumb, .messagesArea::-webkit-scrollbar-thumb  {
+    background-color: var(--color-grey-5);
+    border-radius: 3px;
+}
+.messagesArea{
+    max-height: calc(100vh - var(--header-height) - var(--add-message-height));
+    overflow-y: auto;
+}
+.flex{
+    padding: 10px 10px 25px 10px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.rightColumn{
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+    background-color: #191d2b;
 }
-.send{
-    background-color: #3d9dd7;
-    height: 44px;
-    width: 101px;
-    border-radius: 20px;
-    color: white;
-}
-textarea{
-    border-radius: 20px;
-    text-align: left;
-    padding: 15px;
+@media (min-width:600px){
+    .messagesWrapper{
+    padding: 0 15%;
+    }
 }

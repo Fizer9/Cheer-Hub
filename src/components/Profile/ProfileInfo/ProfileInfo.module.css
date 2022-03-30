@@ -1,3 +1,18 @@
-img{
-    margin-bottom: 15px;
+.avatar{
+    margin-right: 30px;
+}
+.avatar img{
+    width: 200px;
+    height: 200px;
+}
+.flex{
+    display: flex;
+    margin-bottom: 30px;
+}
+.status{
+    text-align: center;
+    font-size: 1.2rem;
+}
+.names{
+    font-size: 2rem;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import Message from './Message/Message';
 import DialogItem from './Dialogitem/Dialogitem';
-import { Field, reduxForm } from 'redux-form';
+import AddMessage from './AddMessageForm/AddMessageForm';
 
 const Dialogs = (props) => {
     let state = props.dialogsPage;
@@ -13,6 +13,8 @@ const Dialogs = (props) => {
 
     let onSendMessageClick = (values) => {
         props.sendMessage(values.newMessageBody);
+        let messagesArea = document.getElementById('messagesArea');
+        messagesArea.scrollTop = messagesArea.scrollHeight;
     }
 
     return (
@@ -20,23 +22,16 @@ const Dialogs = (props) => {
             <div className={s.dialogsItems}>
                 {dialogsElements}
             </div>
-            <div>
-                <div className={s.flex}>{messagesElements}</div>
-                <SendMessageReduxForm onSubmit={onSendMessageClick}/>
+            <div className={s.rightColumn}>
+                <div className={s.messagesWrapper}>
+                <div className={s.messagesArea} id='messagesArea'>
+                    <div className={s.flex}>{messagesElements}</div>
+                </div>
+                <AddMessage onSubmit={onSendMessageClick} />
+                </div>
             </div>
         </div>
     )
 }
-
-const SendMessageForm = (props) => {
-    return (
-    <form onSubmit={props.handleSubmit}>
-        <Field name='newMessageBody' component='textarea' rows="4" cols="110" placeholder='Write a message...' />
-        <button className={s.send}>Send</button>
-    </form>
-    )
-}
-
-const SendMessageReduxForm = reduxForm({form: 'dialogsSendMessageForm'}) (SendMessageForm)
 
 export default Dialogs;
