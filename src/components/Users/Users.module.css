@@ -1,10 +1,56 @@
 .selectedPage{
-    font-weight: bold;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-secondary);
 }
-span{
+.pagination{
+    overflow: auto;
+    max-width: 70vw;
+    margin: 0 auto 10vh auto;
+}
+.pagination span{
     cursor: pointer;
 }
-span:not(:last-child){
+.pagination span:not(:last-child){
     margin-right: 5px;
 }
-
+.userCard{
+    display: flex;
+}
+.userCard:not(:last-child){
+    margin-bottom: 15vh;
+    margin-right: 10vw;
+}
+.leftColumn{
+    margin-right: 15px;
+}
+.usersCards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 0 3vw;
+}
+.name{
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+.button {
+    background-color: transparent;
+    border: 1px solid var(--color-secondary);
+    color: white;
+    padding: 15px 27px;
+    width: 98px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.button:hover{
+    background-color: var(--color-secondary);
+    transition: all .4s ease-in-out;
+}

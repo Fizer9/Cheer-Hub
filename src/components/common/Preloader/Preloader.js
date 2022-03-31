@@ -3,7 +3,7 @@ import s from './Preloader.module.css'
 
 let Preloader = (props) => {
     return <div>
-        <img src={loader}/>
+        <img className={s.loader} src={loader}/>
     </div>
 }
 

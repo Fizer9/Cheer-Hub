@@ -1,14 +1,9 @@
 import React from "react";
-import styles from './Users.module.css';
+import s from './Users.module.css';
 import userPhoto from '../../assets/images/user.png';
 import { NavLink } from "react-router-dom";
 
 const Users = (props) => {
-    //Fake user data
-    let cities = ['Moscow', 'Saint Petersburg', 'Novosibirsk', 'Yekaterinburg', 'Kazan', 'Nizhny Novgorod', 'Chelyabinsk', 'Samara',
-        'Omsk', 'Rostov-on-Don', 'Ufa', 'Krasnoyarsk', 'Voronezh', 'Perm', 'Volgograd', 'Krasnodar', 'Saratov', 'Tyumen', 'Tolyatti',
-        'Izhevsk', 'Barnaul', 'Ulyanovsk', 'Irkutsk', 'Khabarovsk', 'Makhachkala', 'Yaroslavl', 'Vladivostok', 'Orenburg', 'Tomsk',
-        'Kemerovo']
 
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
 
@@ -17,34 +12,36 @@ const Users = (props) => {
         pages.push(i);
     }
 
-    return <div>
-        <div>
+    return <div className={s.usersPage}>
+        <div className={s.pagination}>
             {pages.map(p => {
-                return <span className={props.currentPage === p && styles.selectedPage} onClick={(e) => { props.onPageChanged(p) }}>{p}</span>
+                return <span className={props.currentPage === p && s.selectedPage} onClick={(e) => { props.onPageChanged(p) }}>{p}</span>
             })}
         </div>
-        {
-            props.users.map(u => <div key={u.id}>
-                <div>
-                    <NavLink to={'/profile/' + u.id}>
-                        <img src={u.photos.small != null ? u.photos.small : userPhoto} alt="" />
-                    </NavLink>
-                </div>
-                <div>
-                    {u.followed
-                        ? <button disabled={props.followingInProgress.some(id => id === u.id)}
-                            onClick={() => { props.unfollow(u.id) }}>
-                            Unfollow</button>
-                        : <button disabled={props.followingInProgress.some(id => id === u.id)}
-                            onClick={() => { props.follow(u.id) }}>
-                            Follow</button>}
-                </div>
-                <div>{u.name}</div>
-                <div>{u.status}</div>
-                <div>Russia</div>
-                <div>{cities[Math.floor(Math.random() * cities.length)]}</div>
-            </div>)
-        }
+        <div className={s.usersCards}>
+            {
+                props.users.map(u => <div className={s.userCard} key={u.id}>
+                    <div className={s.leftColumn}>
+                        <NavLink to={'/profile/' + u.id}>
+                            <img src={u.photos.small != null ? u.photos.small : userPhoto} alt="" />
+                        </NavLink>
+                    </div>
+                    <div>
+                        <div className={s.name}>{u.name}</div>
+                        <div>{u.status}</div>
+                        <div>
+                            {u.followed
+                                ? <button className={s.button} disabled={props.followingInProgress.some(id => id === u.id)}
+                                    onClick={() => { props.unfollow(u.id) }}>
+                                    Unfollow</button>
+                                : <button className={s.button} disabled={props.followingInProgress.some(id => id === u.id)}
+                                    onClick={() => { props.follow(u.id) }}>
+                                    Follow</button>}
+                        </div>
+                    </div>
+                </div>)
+            }
+        </div>
     </div>
 }
 
