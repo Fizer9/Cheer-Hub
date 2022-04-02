@@ -54,3 +54,6 @@
     background-color: var(--color-secondary);
     transition: all .4s ease-in-out;
 }
+.usersPage{
+    overflow: hidden;
+}
