@@ -14,3 +14,8 @@
     padding: 10px;
     border-radius: 7px;
 }
+.formSummaryError{
+    border: #ff0000 1px solid;
+    padding: 5px;
+    color: #ff0000;
+}

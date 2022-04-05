@@ -147,4 +147,15 @@ h2{
     font-size: 2rem;
     font-weight: 600;
 }
-// Custom checkbox
+
+// Media
+@media (max-width:600px){
+    .app-wrapper{
+        display: inherit;
+        grid-template-areas: none;
+        // "n h"
+        // "n c";
+        grid-template-rows: var(--header-height) 1fr;
+        grid-template-columns: 1fr 11fr;
+    }  
+}
