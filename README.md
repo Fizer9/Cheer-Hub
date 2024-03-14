@@ -1,5 +1,9 @@
 # Getting Started with Create React App
 
+## Description
+
+If you don't believe in yourself and are tired of seeing social media posts of people vacationing by the sea, Cheer Hub is your resource place. Cheer Hub is a social network to cheer you up. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
