@@ -4,7 +4,7 @@ import { follow, setCurrentPage, unfollow, toggleFollowingProgress, getUsers } f
 import Users from './Users'
 import Preloader from '../common/Preloader/Preloader.js'
 import { compose } from 'redux'
-import { withAuthRedirect } from '../../hoc/withAuthRedirect';
+import { withAuthRedirect } from '../../hoc/WithAuthRedirect';
 
 class UsersContainer extends React.Component {
 
